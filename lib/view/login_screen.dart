@@ -5,6 +5,8 @@ import 'package:multiplatorm/components/button.dart';
 import 'package:multiplatorm/components/textfield.dart';
 import 'package:multiplatorm/constant/image_strings.dart';
 import 'package:multiplatorm/constant/text_string.dart';
+import 'package:multiplatorm/services/auth/otp_service.dart';
+import 'package:multiplatorm/view/otp_screen.dart';
 import 'package:multiplatorm/view/registration_screen.dart';
 import 'package:multiplatorm/services/auth/auth_service.dart';
 import 'package:provider/provider.dart';
@@ -94,6 +96,36 @@ class _LoginScreenState extends State<LoginScreen> {
                       : CButton(onTap: signIn, text: 'Sign In'),
 
                   SizedBox(height: 20),
+                  // sign in options
+                  Text("Or sign in with"),
+                  const SizedBox(height: 10),
+
+                  //sign in with mobile
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => OtpScreen()));
+                      },
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(11.0),
+                            side: BorderSide(color: Colors.white),
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        'Sign in with mobile',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ),
+
                   // not a member text
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
