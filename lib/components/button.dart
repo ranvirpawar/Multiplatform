@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multiplatorm/constant/colors.dart';
 
 class CButton extends StatelessWidget {
   final void Function() onTap;
@@ -7,22 +8,18 @@ class CButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 50,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(9),
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: const TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+    return SizedBox(
+      width: double.infinity,
+      height: 50,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: rBlackColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(9),
           ),
         ),
+        onPressed: onTap,
+        child: Text(text, style: TextStyle(color: rWhiteColor)),
       ),
     );
   }

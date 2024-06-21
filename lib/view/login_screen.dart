@@ -73,18 +73,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 20),
 
                   // email textfield
-                  CTextField(
+                  RTextFiel(
                     controller: emailController,
-                    hintText: 'EMail',
+                    hintText: tEmial,
                     obscureText: false,
                   ),
 
                   SizedBox(height: 10),
 
                   // password textfield
-                  CTextField(
+                  RTextFiel(
                     controller: passwordController,
-                    hintText: 'Password',
+                    hintText: tPassword,
                     obscureText: true,
                   ),
 
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   SizedBox(height: 20),
                   // sign in options
-                  Text("Or sign in with"),
+                  Text("Or"),
                   const SizedBox(height: 10),
 
                   //sign in with mobile

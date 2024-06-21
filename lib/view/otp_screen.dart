@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:multiplatorm/components/button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:multiplatorm/constant/colors.dart';
 import 'package:multiplatorm/services/auth/otp_service.dart';
 
 class OtpScreen extends StatefulWidget {
@@ -58,13 +59,17 @@ class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: rBackgroundColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text("Hey there!",
@@ -76,7 +81,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             IntlPhoneField(
               controller: _mobileNoController,
               decoration: InputDecoration(

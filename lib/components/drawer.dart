@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class CDrawer extends StatelessWidget {
-  const CDrawer({super.key});
+class RDrawer extends StatelessWidget {
+  const RDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,6 @@ class CDrawer extends StatelessWidget {
         child: Column(
       children: [
         // drawer header
-        
 
         //home tile
 

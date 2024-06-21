@@ -70,7 +70,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   const SizedBox(height: 20),
 
                   // email textfield
-                  CTextField(
+                  RTextFiel(
                     controller: emailController,
                     hintText: 'EMail',
                     obscureText: false,
@@ -79,7 +79,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   const SizedBox(height: 10),
 
                   // password textfield
-                  CTextField(
+                  RTextFiel(
                     controller: passwordController,
                     hintText: 'Password',
                     obscureText: true,
@@ -88,7 +88,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   const SizedBox(height: 10),
 
                   // confirm password
-                  CTextField(
+                  RTextFiel(
                     controller: confirmPasswordController,
                     hintText: 'Confirm Password',
                     obscureText: true,

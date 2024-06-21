@@ -33,7 +33,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ),
         ],
       ),
-      drawer: CDrawer(),
+      drawer: RDrawer(),
       body: _buildUserList(),
     );
   }

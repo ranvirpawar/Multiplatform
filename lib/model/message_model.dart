@@ -23,7 +23,6 @@ class Message{
       'message': message,
       'timestamp': timestamp,
     };
-  }
-  
+  } 
 
 }

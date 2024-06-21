@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:multiplatorm/components/chat_bubble.dart';
+import 'package:multiplatorm/constant/text_string.dart';
 import 'package:multiplatorm/services/chat/chat_service.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -58,10 +59,10 @@ class _ChatScreenState extends State<ChatScreen> {
           widget.receiverUserId, _auth.currentUser!.uid),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return const Text('Error');
+          return const Text(tError);
         }
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text('Loading');
+          return const Text(tLoading);
         }
         return ListView(
           children: snapshot.data!.docs
@@ -102,24 +103,30 @@ class _ChatScreenState extends State<ChatScreen> {
   // build message input
 
   Widget _buildMessageInput() {
-    return Row(
-      children: [
-        Expanded(
-          child: TextField(
-            controller: _messageController,
-            decoration: const InputDecoration(
-              hintText: 'Type a message',
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              controller: _messageController,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(40)),
+                ),
+                hintText: tMessage,
+              ),
             ),
           ),
-        ),
-        IconButton(
-          onPressed: sendMessage,
-          icon: const Icon(
-            Icons.send,
-            size: 40,
+          IconButton(
+            onPressed: sendMessage,
+            icon: const Icon(
+              Icons.send,
+              size: 40,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
